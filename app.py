@@ -10,8 +10,6 @@ from urllib.error import HTTPError
 
 import json
 import os
-import datetime
-now = datetime.datetime.now()
 
 from flask import Flask
 from flask import request
@@ -85,7 +83,7 @@ def makeWebhookResult(data):
         return {}
 
     # print(json.dumps(item, indent=4))
-    print(str(now))
+    
     speech =  "Weather Forecast in " + location.get('city') + ": " + condition.get('text') + \
              ", the temperature is " + condition.get('temp') + " " + units.get('temperature') + " for " + condition.get('date') 
 
